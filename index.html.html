@@ -1,0 +1,334 @@
+--<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ítalo Vinícius | Portfólio</title>
+    <style>
+        :root {
+            --neon-green: #0fff50;
+            --dark-bg: #0a0a0a;
+            --light-bg: #111111;
+            --text: #e0e0e0;
+            --highlight: var(--neon-green);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--light-bg);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--neon-green);
+            box-shadow: 0 0 15px rgba(15, 255, 80, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--neon-green);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 5px var(--neon-green);
+            letter-spacing: 2px;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            color: var(--neon-green);
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #222;
+        }
+
+        h2 {
+            color: var(--neon-green);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--neon-green);
+            box-shadow: 0 0 5px var(--neon-green);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 5px;
+            border-left: 3px solid var(--neon-green);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(15, 255, 80, 0.1);
+        }
+
+        .skill-card h3 {
+            color: var(--neon-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-period {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .competencies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .competency {
+            background-color: rgba(15, 255, 80, 0.1);
+            color: var(--neon-green);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid var(--neon-green);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: var(--light-bg);
+            margin-top: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--neon-green);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Efeitos neon */
+        .neon-text {
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow:
+                    0 0 4px #fff,
+                    0 0 11px #fff,
+                    0 0 19px #fff,
+                    0 0 40px var(--neon-green),
+                    0 0 80px var(--neon-green),
+                    0 0 90px var(--neon-green),
+                    0 0 100px var(--neon-green),
+                    0 0 150px var(--neon-green);
+            }
+            20%, 24%, 55% {        
+                text-shadow: none;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1 class="neon-text">ÍTALO VINÍCIUS</h1>
+            <p>Estudante de Gestão da Tecnologia da Informação</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>italo@vinicius@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Manacapuru, Brasil</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(92) 99336-6955</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>SOBRE MIM</h2>
+            <p>Estou em busca do meu primeiro emprego. Sou uma pessoa que se dá bem com o público, tenho boa comunicação e sempre faço o meu melhor para me adaptar ao meu ambiente de trabalho rapidamente.</p>
+            <p>Gosto de aprender e estou sempre buscando adquirir mais conhecimento. Me dou muito bem em trabalhos em grupo e tento ajudar o máximo possível a minha equipe. Também sou uma pessoa que honra com sua pontualidade e prazos.</p>
+            <p>Faço tudo o que estiver ao meu alcance para que os clientes tenham uma ótima experiência com meus serviços.</p>
+        </section>
+
+        <section id="skills">
+            <h2>HABILIDADES</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Inglês Avançado</h3>
+                    <span class="skill-period">Fevereiro 2020 — Dezembro 2024</span>
+                    <p>Consigo manter uma ótima conversação em inglês, o que me possibilita conhecer pessoas de outro país, entender clientes do exterior. Uso dessa habilidade para aprender novas línguas e estudar assuntos que não foram traduzidos para o português.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Programação</h3>
+                    <span class="skill-period">Outubro 2024</span>
+                    <p>Tenho experiência básica na linguagem HTML, a qual me possibilita criar estruturas de sites. Atualmente, também estou estudando CSS para fazer as estilizações, e Python para automações. Tenho grande interesse na área da tecnologia.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Informática Básica</h3>
+                    <span class="skill-period">Fevereiro 2021</span>
+                    <p>Tenho conhecimento básico sobre o pacote Office, principalmente no Windows, Word, Excel e PowerPoint.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>FORMAÇÃO</h2>
+            <div class="skill-card">
+                <h3>Gestão da Tecnologia da Informação</h3>
+                <span class="skill-period">Presente</span>
+                <p>Ensino superior incompleto na Uniasselvi, Manacapuru</p>
+            </div>
+        </section>
+
+        <section id="competencies">
+            <h2>COMPETÊNCIAS</h2>
+            <div class="competencies">
+                <span class="competency">Adaptabilidade</span>
+                <span class="competency">Liderança</span>
+                <span class="competency">Trabalho em equipe</span>
+                <span class="competency">Comunicação</span>
+                <span class="competency">Habilidades de colaboração</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Entre em contato comigo para oportunidades de trabalho ou colaborações</p>
+            <div class="social-links">
+                <a href="mailto:italo@vinicius@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+5592993366955" aria-label="Telefone"><i class="fas fa-phone"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Efeito de digitação no título
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('h1');
+            const originalText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            const typingEffect = setInterval(() => {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typingEffect);
+                }
+            }, 100);
+            
+            // Efeito de hover nas skills
+            const skillCards = document.querySelectorAll('.skill-card');
+            skillCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.borderLeft = `3px solid ${getRandomNeonColor()}`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.borderLeft = '3px solid var(--neon-green)';
+                });
+            });
+            
+            function getRandomNeonColor() {
+                const colors = ['#0fff50', '#0ff0fc', '#ff0ff0', '#ffff00'];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+        });
+    </script>
+</body>
+</html>
